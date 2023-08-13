@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MassaService } from '../massa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-massa-create',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MassaCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private massaService: MassaService, private router: Router) { }
 
   ngOnInit(): void {
+
   }
 
+  createMassa(): void {
+    this.massaService.showMessage('Operação executada com sucesso!')
+  }
+
+  cancel(): void {
+    this.router.navigate(['/massas'])
+  }
 }

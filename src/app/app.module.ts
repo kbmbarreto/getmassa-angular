@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
@@ -38,7 +39,8 @@ import { MassaCreateComponent } from './components/massa/massa-create/massa-crea
     MatListModule,
     MatSidenavModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
