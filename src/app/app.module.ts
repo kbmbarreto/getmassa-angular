@@ -10,12 +10,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
+import { MatButtonModule } from '@angular/material/button';
 
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
 import { MassasComponent } from './views/massas/massas.component';
-import { RedDirective } from './directives/red.directive'
+import { RedDirective } from './directives/red.directive';
+import { MassaCreateComponent } from './components/massa/massa-create/massa-create.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { RedDirective } from './directives/red.directive'
     NavComponent,
     HomeComponent,
     MassasComponent,
-    RedDirective
+    RedDirective,
+    MassaCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { RedDirective } from './directives/red.directive'
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
