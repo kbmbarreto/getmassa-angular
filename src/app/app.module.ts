@@ -14,7 +14,8 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './views/home/home.component';
-import { MassasComponent } from './views/massas/massas.component'
+import { MassasComponent } from './views/massas/massas.component';
+import { RedDirective } from './directives/red.directive'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MassasComponent } from './views/massas/massas.component'
     FooterComponent,
     NavComponent,
     HomeComponent,
-    MassasComponent
+    MassasComponent,
+    RedDirective
   ],
   imports: [
     BrowserModule,
