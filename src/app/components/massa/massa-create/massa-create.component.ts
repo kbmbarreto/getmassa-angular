@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MassaService } from '../massa.service';
 import { Router } from '@angular/router';
+import { Massa } from '../massa.model';
 
 @Component({
   selector: 'app-massa-create',
@@ -9,6 +10,17 @@ import { Router } from '@angular/router';
 })
 export class MassaCreateComponent implements OnInit {
 
+  massa: Massa = {
+    system: '',
+    company: '',
+    environment: '',
+    url: '',
+    description: '',
+    user: '',
+    password: '',
+    notes: ''
+  }
+
   constructor(private massaService: MassaService, private router: Router) { }
 
   ngOnInit(): void {
@@ -16,7 +28,10 @@ export class MassaCreateComponent implements OnInit {
   }
 
   createMassa(): void {
-    this.massaService.showMessage('Operação executada com sucesso!')
+    this.massaService.create(this.massa).subscribe(() => {
+      this.massaService.showMessage('Dados salvos com sucesso!')
+      this.router.navigate(['/massas'])
+    })
   }
 
   cancel(): void {

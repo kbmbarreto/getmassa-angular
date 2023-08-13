@@ -19,6 +19,7 @@ import { HomeComponent } from './views/home/home.component';
 import { MassasComponent } from './views/massas/massas.component';
 import { RedDirective } from './directives/red.directive';
 import { MassaCreateComponent } from './components/massa/massa-create/massa-create.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MassaCreateComponent } from './components/massa/massa-create/massa-crea
     MatSidenavModule,
     MatCardModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
