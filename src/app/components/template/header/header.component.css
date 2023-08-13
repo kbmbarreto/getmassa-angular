@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    allign-items: center;
+}
+
+.header a {
+    display: flex;
+    allign-items: center;
+    text-decoration: none;
+}
+
+.header .logo {
+    margin-right: 32px;
+}
+
+.header .title-group {
+    padding-left: 25px;   
+    padding-right: 25px;   
+}
