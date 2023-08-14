@@ -10,6 +10,7 @@ import { MassaService } from '../massa.service';
 export class MassaReadComponent implements OnInit {
 
   massas: Massa[]
+  displayedColumns = ['id', 'system', 'company', 'environment', 'url', 'description', 'user', 'password', 'notes']
 
   constructor(private massaService: MassaService) { }
 

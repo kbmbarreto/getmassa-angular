@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +25,10 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from "@angular/material/input";
 import { MassaReadComponent } from './components/massa/massa-read/massa-read.component';
+import { MassaRead2Component } from './components/massa/massa-read2/massa-read2.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,8 @@ import { MassaReadComponent } from './components/massa/massa-read/massa-read.com
     MassasComponent,
     RedDirective,
     MassaCreateComponent,
-    MassaReadComponent
+    MassaReadComponent,
+    MassaRead2Component
   ],
   imports: [
     BrowserModule,
@@ -51,9 +56,15 @@ import { MassaReadComponent } from './components/massa/massa-read/massa-read.com
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
