@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/components/template/header/header.service';
 
 @Component({
   selector: 'app-massas',
@@ -8,7 +9,13 @@ import { Router } from '@angular/router';
 })
 export class MassasComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private headerService: HeaderService) {
+    headerService.headerData = {
+      title: 'Massas de Teste',
+      icon: 'local_pizza',
+      routeUrl: '/massas'
+    }
+  }
 
   ngOnInit(): void {
   }
