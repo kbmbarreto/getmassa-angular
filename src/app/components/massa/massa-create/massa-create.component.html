@@ -1,4 +1,33 @@
-<p>massa-create works!</p>
+<mat-card>
+    <mat-card-title>Nova massa de testes</mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Sistema" [(ngModel)]="massa.system" name="system">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Empresa" [(ngModel)]="massa.company" name="company">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ambiente" [(ngModel)]="massa.environment" name="environment">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Endereço" [(ngModel)]="massa.url" name="url">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [(ngModel)]="massa.description" name="description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Usuário" [(ngModel)]="massa.user" name="user">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="massa.password" name="password">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Anotações" [(ngModel)]="massa.notes" name="notes">
+        </mat-form-field>
+    </form>
+</mat-card>
 
 <button mat-raised-button (click)="createMassa()" color="primary">
     Salvar
