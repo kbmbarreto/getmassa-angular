@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './views/home/home.component';
 import { MassasComponent } from './views/massas/massas.component';
 import { MassaCreateComponent } from './components/massa/massa-create/massa-create.component';
+import { MassaUpdateComponent } from './components/massa/massa-update/massa-update.component';
+import { MassaDeleteComponent } from './components/massa/massa-delete/massa-delete.component';
 
 const routes: Routes = [{
   path: '',
@@ -19,7 +21,11 @@ const routes: Routes = [{
 },
 {
   path: 'massas/update/:id',
-  component: MassaCreateComponent,
+  component: MassaUpdateComponent,
+},
+{
+  path: 'massas/delete/:id',
+  component: MassaDeleteComponent,
 }];
 
 @NgModule({

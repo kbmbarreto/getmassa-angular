@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-title>Excluir massa de testes</mat-card-title>
+
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Sistema" [value]="massa.system" name="system" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Empresa" [value]="massa.company" name="company" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Ambiente" [value]="massa.environment" name="environment" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Endereço" [value]="massa.url" name="url" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Descrição" [value]="massa.description" name="description" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Usuário" [value]="massa.user" name="user" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [value]="massa.password" name="password" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Anotações" [value]="massa.notes" name="notes" disabled>
+        </mat-form-field>
+    </form>
+</mat-card>
+
+<button mat-raised-button (click)="deleteMassa()" color="warn">
+    Deletar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>

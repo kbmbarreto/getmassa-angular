@@ -30,6 +30,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MassaUpdateComponent } from './components/massa/massa-update/massa-update.component';
+import { MassaDeleteComponent } from './components/massa/massa-delete/massa-delete.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { MassaUpdateComponent } from './components/massa/massa-update/massa-upda
     MassaCreateComponent,
     MassaReadComponent,
     MassaRead2Component,
-    MassaUpdateComponent
+    MassaUpdateComponent,
+    MassaDeleteComponent
   ],
   imports: [
     BrowserModule,

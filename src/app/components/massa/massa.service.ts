@@ -30,7 +30,7 @@ export class MassaService {
     return this.http.get<Massa[]>(this.baseUrl)
   }
 
-  readById(id: string): Observable<Massa> {
+  readById(id: number): Observable<Massa> {
     const url = `${this.baseUrl}/${id}`
     return this.http.get<Massa>(url)
   }
@@ -40,7 +40,7 @@ export class MassaService {
     return this.http.put<Massa>(url, massa)
   }
 
-  delete(id: string): Observable<Massa> {
+  delete(id: number): Observable<Massa> {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<Massa>(url)
   }

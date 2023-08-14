@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Massa } from '../massa.model';
 import { MassaService } from '../massa.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Massa } from '../massa.model';
 
 @Component({
-  selector: 'app-massa-update',
-  templateUrl: 'massa-update.component.html',
-  styleUrls: ['massa-update.component.css']
+  selector: 'app-massa-delete',
+  templateUrl: './massa-delete.component.html',
+  styleUrls: ['./massa-delete.component.css']
 })
-export class MassaUpdateComponent implements OnInit {
+export class MassaDeleteComponent implements OnInit {
 
   massa: Massa
 
@@ -21,11 +21,11 @@ export class MassaUpdateComponent implements OnInit {
     });
   }
 
-  updateMassa(): void {
-    this.massaService.update(this.massa).subscribe(() => {
-      this.massaService.showMessage('Dados atualizados com sucesso!')
+  deleteMassa(): void {
+    this.massaService.delete(this.massa.id).subscribe(() => {
+      this.massaService.showMessage('Massa excluída com sucesso!')
       this.router.navigate(['/massas'])
-    });
+    })
   }
 
   cancel(): void {
