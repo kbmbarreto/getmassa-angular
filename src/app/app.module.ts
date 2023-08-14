@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from "@angular/material/input";
+import { MassaReadComponent } from './components/massa/massa-read/massa-read.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatInputModule } from "@angular/material/input";
     HomeComponent,
     MassasComponent,
     RedDirective,
-    MassaCreateComponent
+    MassaCreateComponent,
+    MassaReadComponent
   ],
   imports: [
     BrowserModule,

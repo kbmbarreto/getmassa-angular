@@ -25,4 +25,8 @@ export class MassaService {
   create(massa: Massa): Observable<Massa> {
     return this.http.post<Massa>(this.baseUrl, massa)
   }
+
+  read(): Observable<Massa[]> {
+    return this.http.get<Massa[]>(this.baseUrl)
+  }
 }
