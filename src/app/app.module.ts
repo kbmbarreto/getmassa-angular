@@ -29,6 +29,7 @@ import { MassaRead2Component } from './components/massa/massa-read2/massa-read2.
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MassaUpdateComponent } from './components/massa/massa-update/massa-update.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatSortModule } from '@angular/material/sort';
     RedDirective,
     MassaCreateComponent,
     MassaReadComponent,
-    MassaRead2Component
+    MassaRead2Component,
+    MassaUpdateComponent
   ],
   imports: [
     BrowserModule,

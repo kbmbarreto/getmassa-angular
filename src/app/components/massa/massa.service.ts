@@ -40,7 +40,7 @@ export class MassaService {
     return this.http.put<Massa>(url, massa)
   }
 
-  deleteMassa(id: string): Observable<Massa> {
+  delete(id: string): Observable<Massa> {
     const url = `${this.baseUrl}/${id}`
     return this.http.delete<Massa>(url)
   }

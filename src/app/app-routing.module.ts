@@ -16,6 +16,10 @@ const routes: Routes = [{
 {
   path: 'massas/create',
   component: MassaCreateComponent,
+},
+{
+  path: 'massas/update/:id',
+  component: MassaCreateComponent,
 }];
 
 @NgModule({
