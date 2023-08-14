@@ -1,1 +1,24 @@
-<p>massa-read works!</p>
+<ul>
+    <li *ngFor="let massa of massas">
+        <mat-card>
+            <mat-card-title>{{ massa.system }}</mat-card-title>
+            <mat-card-content>
+                <p>Empresa: {{ massa.company }}</p>
+                <p>Ambiente: {{ massa.environment }}</p>
+                <p>Endereço: {{ massa.url }}</p>
+                <p>Descrição: {{ massa.description }}</p>
+                <p>Usuário: {{ massa.user }}</p>
+                <p>Senha: {{ massa.password }}</p>
+                <p>Anotações: {{ massa.notes }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary">
+                    Editar
+                </button>
+                <button mat-raised-button color="warn">
+                    Excluir
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </li>
+</ul>

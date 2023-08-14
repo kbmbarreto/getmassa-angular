@@ -29,4 +29,14 @@ export class MassaService {
   read(): Observable<Massa[]> {
     return this.http.get<Massa[]>(this.baseUrl)
   }
+
+  navigateToMassasUpdate(id: string): Observable<Massa> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.get<Massa>(url)
+  }
+
+  deleteMassa(id: string): Observable<Massa> {
+    const url = `${this.baseUrl}/${id}`
+    return this.http.delete<Massa>(url)
+  }
 }

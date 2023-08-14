@@ -19,5 +19,4 @@ export class MassaReadComponent implements OnInit {
       console.log(massas)
     })
   }
-
 }
