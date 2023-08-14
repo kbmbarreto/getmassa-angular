@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
+import { map, catchError } from "rxjs/operators";
 
 import { Massa } from './massa.model';
 
@@ -14,34 +15,55 @@ export class MassaService {
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
-  showMessage(msg: string): void {
+  showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, 'ENTENDI', {
       duration: 3000,
       horizontalPosition: 'right',
       verticalPosition: 'top',
+      panelClass: isError ? ['msg-error'] : ['msg-success']
     })
   }
 
   create(massa: Massa): Observable<Massa> {
-    return this.http.post<Massa>(this.baseUrl, massa)
+    return this.http.post<Massa>(this.baseUrl, massa).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
   read(): Observable<Massa[]> {
-    return this.http.get<Massa[]>(this.baseUrl)
+    return this.http.get<Massa[]>(this.baseUrl).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
   readById(id: number): Observable<Massa> {
     const url = `${this.baseUrl}/${id}`
-    return this.http.get<Massa>(url)
+    return this.http.get<Massa>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
   update(massa: Massa): Observable<Massa> {
     const url = `${this.baseUrl}/${massa.id}`
-    return this.http.put<Massa>(url, massa)
+    return this.http.put<Massa>(url, massa).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
   }
 
   delete(id: number): Observable<Massa> {
     const url = `${this.baseUrl}/${id}`
-    return this.http.delete<Massa>(url)
+    return this.http.delete<Massa>(url).pipe(
+      map((obj) => obj),
+      catchError((e) => this.errorHandler(e))
+    );
+  }
+
+    errorHandler(e: any): Observable<any> {
+    this.showMessage('Ocorreu um erro!', true)
+    return EMPTY
   }
 }
